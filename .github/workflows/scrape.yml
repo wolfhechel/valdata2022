@@ -1,8 +1,10 @@
-
+name: Scrape
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron:  '0 15 * * 1-5'
-name: Scrape
 jobs:
   build:
     name: Build
@@ -14,3 +16,4 @@ jobs:
     - uses: mikeal/publish-to-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub sets this for you
+        BRANCH_NAME: main
