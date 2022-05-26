@@ -12,9 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Scrape
-      run: npm run scrape
-    - name: Normalize line endings
-      run: find data -type f -exec sed -e 's/\r\n/\n/g' -e 's/\r/\n/g' -i {} \;
+      run: bash scrape.sh
     - uses: mikeal/publish-to-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub sets this for you

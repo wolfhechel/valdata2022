@@ -1,5 +1,0 @@
-{
-  "scripts": {
-      "scrape": "node index.js"
-  }
-}
